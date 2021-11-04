@@ -1,4 +1,4 @@
-# To do list :‬‬
+## To do list :‬‬
 
 ‪‪An app that stores and displays the information entered by the user‬‬
 
