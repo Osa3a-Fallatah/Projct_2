@@ -4,13 +4,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProjctToDolist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="ViewController" customModule="ProjctToDolist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +34,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="Zai-tR-IpE"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="tintColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save"/>
                                 <connections>
@@ -80,7 +81,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQi-Ot-VIr">
                                 <rect key="frame" x="20" y="187" width="72" height="31"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="tintColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Update"/>
                                 <connections>
@@ -129,7 +130,7 @@
                     </view>
                     <connections>
                         <outlet property="myTable" destination="tTB-3C-cmB" id="Uub-n4-c2Q"/>
-                        <outlet property="searchBTN" destination="Au6-ls-tbq" id="UCI-1S-kEV"/>
+                        <outlet property="serchBar" destination="Au6-ls-tbq" id="UCI-1S-kEV"/>
                         <outlet property="usertext" destination="BqD-56-r1A" id="16w-Ra-JGY"/>
                         <segue destination="0F1-iW-VCo" kind="show" identifier="myseque" id="EeD-4f-ZcP"/>
                     </connections>
@@ -182,5 +183,8 @@
     </scenes>
     <resources>
         <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

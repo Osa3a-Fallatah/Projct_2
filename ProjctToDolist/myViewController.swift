@@ -12,7 +12,7 @@ protocol passDataBack{
 }
 
 class myViewController: UIViewController {
-    var passdata:String?
+    var DataSors:String?
     var delegate:passDataBack!
 
    
@@ -22,7 +22,7 @@ class myViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        usrdata.text = passdata!
+        usrdata.text = DataSors!
         
     }
     

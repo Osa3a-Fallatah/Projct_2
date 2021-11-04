@@ -5,40 +5,21 @@
 import UIKit
 
 class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource , passDataBack ,UISearchBarDelegate {
-    
-   
+ 
     var UserList = [String]()
-    var selectdata:String=""
-    var selectindex:Int=0
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return UserList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = UserList[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt index: IndexPath) {
-        print("User selected: \(index.row)")
-    }
-    
-
 //
     @IBOutlet weak var usertext: UITextField!
     @IBOutlet weak var myTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserList = filterList
-        searchBTN.delegate = self
+         filterList = UserList
+        serchBar.delegate = self
         myTable.delegate = self
         myTable.dataSource = self
         usertext.layer.cornerRadius = 20
         myTable.layer.cornerRadius = 15
         if let usrDefaults = UserDefaults.standard.object(forKey: "List") as? [String]{
-            filterList = usrDefaults
+            UserList = usrDefaults
         }
     }
 //
@@ -74,6 +55,8 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
             present(alter, animated: true, completion: nil)
         }
     }
+    var selectdata:String=""
+    var selectindex:Int=0
 // protocol function to receiv data
     func updateRow(updateName: String) {
         UserList[selectindex] = updateName
@@ -91,27 +74,38 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
 
     @IBAction func updateBTN(_ sender: Any) {
         self.selectindex = (myTable.indexPathForSelectedRow![1])
-               self.selectdata = UserList[selectindex]
-        performSegue(withIdentifier: "myseque", sender: self)
+        self.selectdata = UserList[self.selectindex]
+            print(self.selectindex)
+        self.performSegue(withIdentifier: "myseque", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination:myViewController = segue.destination as! myViewController
         destination.delegate = self
-        destination.passdata = selectdata
+        destination.DataSors = selectdata
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return UserList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = UserList[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt index: IndexPath) {
+        print("User selected: \(index.row)")
     }
     // SearchBar
-    @IBOutlet weak var searchBTN: UISearchBar!
+    @IBOutlet weak var serchBar: UISearchBar!
     var filterList = [String]()
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != ""{
-         filterList   = UserList.filter{$0.contains(searchText)}
+            filterList   = UserList.filter{$0.contains((searchBar.text?.lowercased())!)}
             //UserList = filterList.filter{$0.contains(searchText)}
-            myTable.reloadData().self
-            print(filterList)
-        }
-       }
+            print(filterList)}}
     }
   
 
