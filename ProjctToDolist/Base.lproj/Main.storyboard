@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nBF-Nx-fpx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -8,6 +8,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Home-->
+        <scene sceneID="RJB-t5-JB1">
+            <objects>
+                <viewController id="bdM-W5-hEb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KiW-vT-yNj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="vIr-nv-yQO">
+                                <rect key="frame" x="20" y="268" width="374" height="360"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JVo-bn-KSn"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vIr-nv-yQO" firstAttribute="leading" secondItem="JVo-bn-KSn" secondAttribute="leading" constant="20" id="9oG-te-jXD"/>
+                            <constraint firstItem="vIr-nv-yQO" firstAttribute="centerX" secondItem="KiW-vT-yNj" secondAttribute="centerX" id="Fo8-bm-FZF"/>
+                            <constraint firstItem="JVo-bn-KSn" firstAttribute="trailing" secondItem="vIr-nv-yQO" secondAttribute="trailing" constant="20" id="Qa5-7k-61W"/>
+                            <constraint firstItem="vIr-nv-yQO" firstAttribute="centerY" secondItem="KiW-vT-yNj" secondAttribute="centerY" id="WdK-dL-tk8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="EZL-zL-Pjm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RhZ-6F-gKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740.57971014492762" y="-437.27678571428572"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ITn-jP-JWh">
+            <objects>
+                <tabBarController id="nBF-Nx-fpx" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bf4-R4-jaO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bdM-W5-hEb" kind="relationship" relationship="viewControllers" id="Ypr-N5-2Cz"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Cud-bu-2QV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVw-Fm-Kxz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1629" y="-133"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -42,7 +87,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tTB-3C-cmB">
-                                <rect key="frame" x="10" y="299" width="394" height="563"/>
+                                <rect key="frame" x="10" y="299" width="394" height="514"/>
                                 <color key="backgroundColor" red="0.83529412749999998" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Nfy-wy-1f2">
@@ -128,6 +173,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Y5-CF-wXL" secondAttribute="trailing" constant="20" id="ziv-ZN-i0b"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="pencil" catalog="system" id="YHz-qm-b3E"/>
                     <connections>
                         <outlet property="myTable" destination="tTB-3C-cmB" id="Uub-n4-c2Q"/>
                         <outlet property="serchBar" destination="Au6-ls-tbq" id="UCI-1S-kEV"/>
@@ -138,7 +184,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="esf-ds-6ff" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+            <point key="canvasLocation" x="-817" y="240"/>
         </scene>
         <!--My View Controller-->
         <scene sceneID="kfM-5U-Z0n">
@@ -182,7 +228,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon" width="360" height="360"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

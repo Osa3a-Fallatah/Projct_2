@@ -104,9 +104,11 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != ""{
             filterList   = UserList.filter{$0.contains((searchBar.text?.lowercased())!)}
-            //UserList = filterList.filter{$0.contains(searchText)}
             print(filterList)}}
+    //func search
     }
+    
+    
   
 
 
