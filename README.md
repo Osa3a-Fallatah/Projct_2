@@ -21,9 +21,7 @@ UserDefaults
 
 Debugging
 
-### issues in the app:
-
-‬‬‪‪ Features:‬‬
+###  Features:‬‬
 
 ‪‪You can save your note in the app after closing the program
 
