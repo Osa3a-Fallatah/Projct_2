@@ -22,8 +22,8 @@ UserDefaults
 Debugging
 
 ### issues in the app:
-everything works fine except
-search bar not sohwing up in the tableview
+
+search bar not sohwing up in the tableview correct
 
 ‬‬‪‪ Features:‬‬
 
