@@ -1,11 +1,11 @@
-### To do list :‬‬
+# To do list :‬‬
 
 ‪‪An app that stores and displays the information entered by the user‬‬
 
 ‪‪The user can : Add, delete one or clear all , Edit, Show the tasks
 
 
-# What I used in my app:
+### What I used in my app:
 
 UIViewController
 UITableView
@@ -15,7 +15,7 @@ Action and Manual Segues
 UserDefaults
 Debugging
 
-# issues in the app:
+### issues in the app:
 everything works fine except
 search bar not sohwing up in the tableview
 
@@ -23,7 +23,7 @@ search bar not sohwing up in the tableview
 
 ‪‪You can save your note in the app after closing the program
 
-# ‪Upcoming features:‬
+### ‪Upcoming features:‬
 
 ‪Date of creation‬ ‪Add more details
 use login and password for task
