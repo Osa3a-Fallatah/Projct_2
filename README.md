@@ -23,8 +23,6 @@ Debugging
 
 ### issues in the app:
 
-search bar not sohwing up in the tableview correct
-
 ‬‬‪‪ Features:‬‬
 
 ‪‪You can save your note in the app after closing the program
