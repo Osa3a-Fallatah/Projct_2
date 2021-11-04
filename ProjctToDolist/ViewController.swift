@@ -7,12 +7,16 @@ import UIKit
 class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource , passDataBack ,UISearchBarDelegate {
     
     var UserList = [String]()
+    var originalList : [String]!
+
     //
     @IBOutlet weak var usertext: UITextField!
     @IBOutlet weak var myTable: UITableView!
+    override func viewWillAppear(_ animated: Bool) {
+        originalList = UserList
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        filterList = UserList
         serchBar.delegate = self
         myTable.delegate = self
         myTable.dataSource = self
@@ -100,14 +104,16 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
     }
     // SearchBar
     @IBOutlet weak var serchBar: UISearchBar!
-    var filterList = [String]()
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != ""{
             UserList =
                 UserList.filter{$0.contains((searchBar.text?.lowercased())!)
-            }
-            print(UserList)}
+            }            
+        } else if searchText.isEmpty {
+            UserList = originalList
+
+        }
         myTable.reloadData()
  }
 }
