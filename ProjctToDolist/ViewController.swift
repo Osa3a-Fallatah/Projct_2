@@ -5,14 +5,14 @@
 import UIKit
 
 class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource , passDataBack ,UISearchBarDelegate {
- 
+    
     var UserList = [String]()
-//
+    //
     @IBOutlet weak var usertext: UITextField!
     @IBOutlet weak var myTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-         filterList = UserList
+        filterList = UserList
         serchBar.delegate = self
         myTable.delegate = self
         myTable.dataSource = self
@@ -22,7 +22,7 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
             UserList = usrDefaults
         }
     }
-//
+    //
     @IBAction func saveBTN(_ sender: Any) {
         if usertext.text != ""{
             UserList.append(usertext.text!)
@@ -31,23 +31,23 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
             myTable.reloadData()
         }
     }
-// to clear the list
+    // to clear the list
     @IBAction func deleteBTN(_ sender: Any) {
         UserList.removeAll()
         myTable.reloadData()
         UserDefaults.standard.set(UserList,forKey: "List")
     }
-// to delete only selected
+    // to delete only selected
     @IBAction func delete_BTN(_ sender: Any) {
         if myTable.indexPathForSelectedRow != nil {
-        let select = ( myTable.indexPathForSelectedRow![1])
-        print(myTable.indexPathForSelectedRow![1])
-        UserList.remove(at: select)
-        myTable.reloadData()
+            let select = ( myTable.indexPathForSelectedRow![1])
+            print(myTable.indexPathForSelectedRow![1])
+            UserList.remove(at: select)
+            myTable.reloadData()
             
         }
         else{
-// display error msg
+            // display error msg
             let titel = "Wrong Action"
             let msg = "Pleas Select the Task First"
             let alter = UIAlertController(title: titel, message: msg, preferredStyle: .alert)
@@ -57,25 +57,25 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
     }
     var selectdata:String=""
     var selectindex:Int=0
-// protocol function to receiv data
+    // protocol function to receiv data
     func updateRow(updateName: String) {
         UserList[selectindex] = updateName
         myTable.reloadData()
     }
-
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let action = UIContextualAction(style: .normal, title: "Edit"){
-//            (action,view,completion) in
-//            print( self.selectdata = self.UserList[indexPath.row],
-//            self.selectindex = indexPath.row)
-//            self.performSegue(withIdentifier: "myseque", sender: self)
-//            completion(true) }
-//    return UISwipeActionsConfiguration (actions: [action])}
-
+    
+    //    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    //        let action = UIContextualAction(style: .normal, title: "Edit"){
+    //            (action,view,completion) in
+    //            print( self.selectdata = self.UserList[indexPath.row],
+    //            self.selectindex = indexPath.row)
+    //            self.performSegue(withIdentifier: "myseque", sender: self)
+    //            completion(true) }
+    //    return UISwipeActionsConfiguration (actions: [action])}
+    
     @IBAction func updateBTN(_ sender: Any) {
         self.selectindex = (myTable.indexPathForSelectedRow![1])
         self.selectdata = UserList[self.selectindex]
-            print(self.selectindex)
+        print(self.selectindex)
         self.performSegue(withIdentifier: "myseque", sender: self)
     }
     
@@ -83,10 +83,11 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let destination:myViewController = segue.destination as! myViewController
         destination.delegate = self
         destination.DataSors = selectdata
-    }
+            }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return UserList.count
-    }
+            }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -103,12 +104,15 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != ""{
-            filterList   = UserList.filter{$0.contains((searchBar.text?.lowercased())!)}
-            print(filterList)}}
-    //func search
-    }
-    
-    
-  
+            UserList =
+                UserList.filter{$0.contains((searchBar.text?.lowercased())!)
+            }
+            print(UserList)}
+        myTable.reloadData()
+ }
+}
+
+
+
 
 

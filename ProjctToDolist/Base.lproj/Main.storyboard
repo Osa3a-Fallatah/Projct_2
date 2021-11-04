@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +22,8 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JVo-bn-KSn"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vIr-nv-yQO" firstAttribute="leading" secondItem="JVo-bn-KSn" secondAttribute="leading" constant="20" id="9oG-te-jXD"/>
                             <constraint firstItem="vIr-nv-yQO" firstAttribute="centerX" secondItem="KiW-vT-yNj" secondAttribute="centerX" id="Fo8-bm-FZF"/>
@@ -29,7 +31,9 @@
                             <constraint firstItem="vIr-nv-yQO" firstAttribute="centerY" secondItem="KiW-vT-yNj" secondAttribute="centerY" id="WdK-dL-tk8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="EZL-zL-Pjm"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="EZL-zL-Pjm">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhZ-6F-gKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,7 +46,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bf4-R4-jaO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="bdM-W5-hEb" kind="relationship" relationship="viewControllers" id="Ypr-N5-2Cz"/>
@@ -53,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="-1629" y="-133"/>
         </scene>
-        <!--View Controller-->
+        <!--mynote-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="ViewController" customModule="ProjctToDolist" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +93,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tTB-3C-cmB">
                                 <rect key="frame" x="10" y="299" width="394" height="514"/>
-                                <color key="backgroundColor" red="0.83529412749999998" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Nfy-wy-1f2">
                                         <rect key="frame" x="0.0" y="44.5" width="394" height="43.5"/>
@@ -102,6 +107,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-CF-wXL">
                                 <rect key="frame" x="284" y="44" width="110" height="31"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="jvh-6W-uSB"/>
                                 </constraints>
@@ -114,10 +120,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzF-JT-TW1">
                                 <rect key="frame" x="20" y="44" width="110" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="faF-J6-1qA"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Delete selected"/>
                                 <connections>
@@ -126,7 +133,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQi-Ot-VIr">
                                 <rect key="frame" x="20" y="187" width="72" height="31"/>
-                                <color key="tintColor" systemColor="tintColor"/>
+                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Update"/>
                                 <connections>
@@ -149,7 +156,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.86680430173873901" green="0.92173504829406738" blue="0.96229904890060425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BqD-56-r1A" secondAttribute="trailing" constant="20" id="52a-u0-yj3"/>
                             <constraint firstItem="tTB-3C-cmB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="CFA-ew-SQe"/>
@@ -173,7 +180,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Y5-CF-wXL" secondAttribute="trailing" constant="20" id="ziv-ZN-i0b"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="pencil" catalog="system" id="YHz-qm-b3E"/>
+                    <tabBarItem key="tabBarItem" title="mynote" selectedImage="pencil.circle" catalog="system" id="YHz-qm-b3E">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="myTable" destination="tTB-3C-cmB" id="Uub-n4-c2Q"/>
                         <outlet property="serchBar" destination="Au6-ls-tbq" id="UCI-1S-kEV"/>
@@ -215,7 +224,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ngN-em-2JJ"/>
-                        <color key="backgroundColor" red="0.83529412749999998" green="0.90196073060000004" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="jeb-pH-3y2"/>
                     <connections>
@@ -224,14 +233,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SB4-u4-ShL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="80"/>
+            <point key="canvasLocation" x="219" y="240"/>
         </scene>
     </scenes>
     <resources>
         <image name="icon" width="360" height="360"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="trash" catalog="system" width="121" height="128"/>
-        <systemColor name="secondarySystemBackgroundColor">
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
