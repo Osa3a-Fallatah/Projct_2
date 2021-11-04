@@ -1,12 +1,19 @@
 ‪‪To do list :‬‬
 
-‪‪A program that stores and displays the information entered by the user‬‬
+‪‪An app that stores and displays the information entered by the user‬‬
 
 ‪‪The user can : Add, delete one or clear all , Edit, Show the tasks
 
-the program contain:
 
+What I used in my app:
+
+UIViewController
+UITableView
 [2 view controller 1 table view 2 classes one for each view ]
+TableViewCell prototype
+Action and Manual Segues
+UserDefaults
+Debugging
 
 issues in the app:
 everything works fine except
@@ -19,3 +26,4 @@ search bar not sohwing up in the tableview
 ‪Upcoming features:‬
 
 ‪Date of creation‬ ‪Add more details
+
